@@ -56,176 +56,186 @@
       <h1>Privacy Policy</h1>
       <p class="updated">Last updated: March 12, 2026</p>
       <p>
-        This Privacy Policy explains how There: Your travel map (the "App") is
-        provided by [Developer Name], an indie developer based in [Country], and
-        how information may be handled when you use the App.
+        This Privacy Policy explains how There: Your travel map (the "App")
+        handles information when you use it.
       </p>
     </header>
 
     <section>
-      <h2>Introduction</h2>
+      <h2>1. Personal Data Collected</h2>
       <p>
-        There: Your travel map is designed to help you record and organize your
-        travels. The App is intended to be simple and privacy-conscious. In its
-        current form, the App may store information that you enter directly on
-        your device so that the App can function as expected.
+        The App does not require you to create an account and does not include
+        its own developer-operated backend for storing your travel data.
       </p>
       <p>
-        Please read this Privacy Policy carefully to understand what information
-        may be collected, how it may be used, and what choices you may have. If
-        you do not agree with this Privacy Policy, you should not use the App.
+        Based on the current implementation, the developer does not collect
+        analytics data, advertising identifiers, or tracking data through the
+        App. If you contact the developer by email, the developer will receive
+        your email address and the contents of your message.
       </p>
     </section>
 
     <section>
-      <h2>Information We Collect</h2>
-      <p>The App may collect or process the following categories of information:</p>
+      <h2>2. Data You May Store in the App</h2>
+      <p>The App allows you to store certain information on your device, including:</p>
       <ul>
-        <li>
-          Information you enter directly, such as trips, places, notes, travel
-          history, preferences, or other content you choose to save in the App.
-        </li>
-        <li>
-          Basic support communications if you contact [Developer Name], such as
-          your name, email address, and the contents of your message.
-        </li>
-        <li>
-          Limited technical or diagnostic information that may be made available
-          through Apple or the operating system, for example when the App crashes
-          or when you request support.
-        </li>
+        <li>Countries you mark as visited.</li>
+        <li>The date each country was marked as visited.</li>
+        <li>Your chosen display name.</li>
+        <li>An optional profile photo that you choose through the system photo picker.</li>
       </ul>
       <p>
-        The App is not intended to use advertising trackers. If analytics, crash
-        reporting, cloud sync, accounts, or third-party integrations are added in
-        the future, this Privacy Policy may be updated to describe those changes.
+        This information is used only to provide the App's features, such as your
+        travel map, profile display, and statistics.
       </p>
     </section>
 
     <section>
-      <h2>How We Use Information</h2>
-      <p>Information may be used for the following purposes:</p>
-      <ul>
-        <li>To provide and maintain the App's core features.</li>
-        <li>To save and display the travel information you choose to enter.</li>
-        <li>To respond to support requests or questions you send.</li>
-        <li>To diagnose technical issues, fix bugs, and improve reliability.</li>
-        <li>To comply with legal obligations when required by law.</li>
-      </ul>
+      <h2>3. Local Storage</h2>
       <p>
-        [Developer Name] does not intend to sell your personal information or use
-        it for unrelated advertising purposes.
+        The App uses SwiftData to store visited countries, your display name, and
+        your optional profile photo locally on your device.
+      </p>
+      <p>
+        The code currently reviewed does not show CloudKit or iCloud sync being
+        enabled for this data. Your information may still be included in Apple
+        device backups if backup features are enabled on your device, under
+        Apple's own terms and privacy practices.
       </p>
     </section>
 
     <section>
-      <h2>Data Storage</h2>
+      <h2>4. Photos</h2>
       <p>
-        The App is intended primarily to store user-entered data locally on your
-        device. This means your travel records, notes, and preferences may remain
-        on your iPhone or iPad unless you delete them from within the App, remove
-        the App, or erase the device.
+        Adding a profile photo is optional. If you choose a photo through the
+        system photo picker, the selected image data may be stored in the App's
+        local data so it can be shown in your profile.
       </p>
       <p>
-        Depending on your Apple settings, local app data may also be included in
-        device backups or services controlled by Apple. Those services are subject
-        to Apple's own terms and privacy practices.
-      </p>
-      <p>
-        If cloud sync, user accounts, or server-based storage are introduced in a
-        future version of the App, this Privacy Policy may be revised accordingly.
+        The developer does not receive your photo through the App.
       </p>
     </section>
 
     <section>
-      <h2>Third-Party Services</h2>
+      <h2>5. Network Requests and Third-Party Services</h2>
       <p>
-        The App is intended to operate with limited third-party data sharing. At
-        present, [Developer Name] does not state that the App relies on advertising
-        networks or unnecessary external tracking tools.
+        Most core travel-map data shown in the App is bundled with the App itself.
+        When you open a country details screen, the App may request country
+        statistics from the World Bank public API.
       </p>
       <p>
-        However, distribution through the App Store and use on iOS devices may
-        involve Apple and its related services. Apple may process certain technical,
-        billing, or device-related information under its own privacy terms.
+        Those requests are sent directly from your device to that third-party
+        service. They may include technical information normally sent in web
+        requests, such as your IP address and device networking metadata, under
+        that service's own policies.
       </p>
       <p>
-        If features such as analytics, crash reporting, mapping providers, cloud
-        sync, sign-in systems, or other third-party integrations are added later,
-        this Privacy Policy may be updated before or when those features become
-        available.
-      </p>
-    </section>
-
-    <section>
-      <h2>Data Retention</h2>
-      <p>
-        Data you enter in the App may remain stored on your device until you edit
-        or delete it, remove the App, or clear your device data.
-      </p>
-      <p>
-        If you contact [Developer Name] for support, related communications may be
-        kept for as long as reasonably necessary to respond, resolve the issue, keep
-        business records, or comply with legal obligations.
+        The App can also open external links such as Apple Maps, Google Maps,
+        Waze, Instagram, TikTok, email links, and web pages for legal documents.
+        If you open those links, the privacy practices of those services apply.
       </p>
     </section>
 
     <section>
-      <h2>Your Rights</h2>
+      <h2>6. No Analytics, Ads, or Tracking</h2>
       <p>
-        Depending on where you live, you may have rights regarding your personal
-        information, including rights to request access, correction, deletion, or
-        information about how your data is used.
+        Based on the current codebase, the App does not include third-party
+        analytics SDKs, advertising SDKs, or app-level tracking technologies.
       </p>
       <p>
-        Because the App is intended to store much of your information locally on
-        your own device, you may be able to review, edit, or delete certain data
-        directly within the App or by removing the App from your device.
-      </p>
-      <p>
-        To make a privacy-related request, contact [Developer Name] at
-        <a href="mailto:[Contact Email]">[Contact Email]</a>.
+        The developer does not receive usage analytics about how you mark
+        countries, browse the map, or use the App's screens.
       </p>
     </section>
 
     <section>
-      <h2>Children's Privacy</h2>
+      <h2>7. Accounts, Notifications, and Purchases</h2>
       <p>
-        The App is not directed to children under 13, or the equivalent minimum age
-        in your jurisdiction, and [Developer Name] does not knowingly collect
-        personal information from children through the App.
+        The current implementation does not provide user accounts or sign-in.
       </p>
       <p>
-        If you believe a child has provided personal information, please contact
-        [Developer Name] so appropriate steps can be taken.
-      </p>
-    </section>
-
-    <section>
-      <h2>Changes to This Privacy Policy</h2>
-      <p>
-        [Developer Name] may update this Privacy Policy from time to time. Changes
-        may be made to reflect updates to the App, legal requirements, or new
-        features such as analytics, crash reporting, cloud sync, accounts, or
-        third-party integrations.
+        The current implementation also does not show local or push notifications,
+        and it does not show implemented in-app purchases or subscriptions.
       </p>
       <p>
-        When this Privacy Policy is updated, the "Last updated" date at the top of
-        this page will be changed. Your continued use of the App after an update
-        means you accept the revised Privacy Policy.
+        Apple may still process information related to App Store distribution,
+        downloads, reviews, or payments under Apple's own policies where
+        applicable.
       </p>
     </section>
 
     <section>
-      <h2>Contact</h2>
+      <h2>8. Data Retention</h2>
       <p>
-        If you have questions about this Privacy Policy or the App's privacy
-        practices, you can contact:
+        Data stored by the App remains on your device until you change it, delete
+        it, or remove the App.
       </p>
       <p>
-        [Developer Name]<br>
-        [Country]<br>
-        <a href="mailto:[Contact Email]">[Contact Email]</a>
+        If you email the developer, the developer may keep that correspondence for
+        as long as reasonably necessary to respond and maintain basic records.
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Your Privacy Rights</h2>
+      <p>
+        Because the App mainly stores data locally on your device, you can usually
+        access, update, or delete that data directly in the App or by deleting the
+        App from your device.
+      </p>
+      <p>
+        If applicable law gives you additional privacy rights, you may also
+        contact the developer at
+        <a href="mailto:beucaalexandru@icloud.com">beucaalexandru@icloud.com</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>10. Children's Privacy</h2>
+      <p>
+        The App is not designed to intentionally collect personal data from
+        children. The developer does not knowingly collect children's personal
+        data through the App.
+      </p>
+      <p>
+        If you believe a child has sent personal information to the developer by
+        email, contact the developer so appropriate steps can be taken.
+      </p>
+    </section>
+
+    <section>
+      <h2>11. Security</h2>
+      <p>
+        Data stored by the App relies on the security protections provided by iOS
+        and your device, including device-level access controls and Apple's system
+        security measures.
+      </p>
+      <p>
+        No method of storage or transmission can be guaranteed to be completely
+        secure, but the App is designed to minimize unnecessary data sharing.
+      </p>
+    </section>
+
+    <section>
+      <h2>12. Changes to This Policy</h2>
+      <p>
+        This Privacy Policy may be updated from time to time to reflect changes to
+        the App or legal requirements.
+      </p>
+      <p>
+        When this page is updated, the "Last updated" date at the top will also be
+        updated.
+      </p>
+    </section>
+
+    <section>
+      <h2>13. Contact</h2>
+      <p>
+        If you have questions about this Privacy Policy, you can contact the
+        developer at:
+      </p>
+      <p>
+        <a href="mailto:beucaalexandru@icloud.com">beucaalexandru@icloud.com</a>
       </p>
     </section>
   </main>
