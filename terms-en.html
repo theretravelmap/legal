@@ -54,7 +54,7 @@
   <main>
     <header>
       <h1>Terms &amp; Conditions</h1>
-      <p class="updated">Last updated: April 6, 2026</p>
+      <p class="updated">Last updated: April 20, 2026</p>
       <p>
         These Terms of Use govern your use of There: Your travel map (the
         "App"). By using the App, you agree to these Terms. If you do not
@@ -66,9 +66,10 @@
       <h2>1. Purpose of the App</h2>
       <p>
         The App is a personal travel tracking and visualization app. It lets you
-        record visited countries, optionally save visit dates, view travel
-        statistics and achievements, see country details, generate share images,
-        and compare travel maps with another person through QR codes.
+        record visited countries and cities, optionally save visit dates, view
+        travel statistics and achievements, see country details, display a
+        travel map widget, generate share images, and compare travel maps with
+        another person through QR codes.
       </p>
       <p>
         The App is provided for personal and informational use only. It is not
@@ -98,6 +99,7 @@
         <li>visited trip entries, including countries, optional trip dates, and related timestamps;</li>
         <li>wish-list entries, including optional planned dates and related timestamps;</li>
         <li>lived-country entries, including start dates, optional end dates, currently-living status, and related timestamps;</li>
+        <li>city entries, including city name, GeoNames identifier, country code, status, optional dates, currently-living status where applicable, and related timestamps;</li>
         <li>your chosen profile name;</li>
         <li>your optional emoji avatar selection;</li>
         <li>your optional residency country selection;</li>
@@ -105,7 +107,7 @@
       </ul>
       <p>
         The App derives progress displays, statistics, achievements, QR profiles,
-        and share images from that data.
+        widget snapshots, and share images from that data.
       </p>
       <p>
         If you display your QR code or use the system share sheet, you direct the
@@ -120,7 +122,8 @@
         The App uses SwiftData and local app storage for its main data. The App
         also includes Apple iCloud / CloudKit entitlements and may rely on
         Apple's SwiftData / CloudKit behavior for syncing supported data when
-        those services are enabled and available.
+        those services are enabled and available. Supported data may include
+        trip records, city entries, and profile data.
       </p>
       <p>
         The App does not provide its own custom sync controls, custom recovery
@@ -138,13 +141,15 @@
       <h2>5. Third-Party Data, Apple Services, and External Links</h2>
       <p>
         Country list data for the core map experience is bundled with the App.
+        City search data derived from GeoNames is also bundled with the App.
         Some country statistics are requested from third-party public data
         sources, including the World Bank API.
       </p>
       <p>
         The App may also use Apple-managed services for iCloud / CloudKit sync
-        behavior, App Store distribution, ratings and reviews, and one-time tip /
-        donation purchases through StoreKit.
+        behavior, App Store distribution, ratings and reviews, StoreKit
+        purchases, purchase restoration, subscriptions, lifetime purchases, and
+        one-time tip / donation purchases.
       </p>
       <p>
         The App may open external links or apps such as Instagram, TikTok, Apple
@@ -160,16 +165,24 @@
     </section>
 
     <section>
-      <h2>6. Purchases and Donations</h2>
+      <h2>6. Purchases, Subscriptions, and Donations</h2>
       <p>
-        The App includes optional one-time consumable tip / donation products
-        processed through Apple's StoreKit and the App Store. The App does not
-        currently implement subscriptions.
+        The App may offer optional paid There Pro features through Apple's
+        StoreKit and the App Store. Current products may include auto-renewable
+        subscription options, a lifetime non-consumable purchase, and optional
+        one-time consumable tip / donation products.
       </p>
       <p>
-        Purchase availability, billing, refunds, family sharing status, and other
-        purchase-related matters are subject to Apple's systems, policies, and
-        applicable law.
+        Auto-renewable subscriptions renew automatically unless cancelled through
+        your Apple account before renewal, according to Apple's rules. Free
+        trials, introductory offers, billing, cancellation, refunds, family
+        sharing status, purchase restoration, and other purchase-related matters
+        are subject to Apple's systems, policies, and applicable law.
+      </p>
+      <p>
+        The developer cannot guarantee that every product, price, trial, offer,
+        or paid feature will always be available. Restoring purchases asks Apple
+        to sync eligible App Store entitlements to the App.
       </p>
     </section>
 
@@ -210,9 +223,9 @@
       </p>
       <p>
         The developer also does not guarantee that travel statistics,
-        achievements, QR comparison results, map rendering, share previews,
-        purchased tip availability, or country details will always be accurate,
-        complete, or available.
+        achievements, QR comparison results, map rendering, widget rendering,
+        share previews, purchased product availability, city data, or country
+        details will always be accurate, complete, or available.
       </p>
     </section>
 
@@ -247,9 +260,10 @@
     <section>
       <h2>12. Notifications, Permissions, and Device Features</h2>
       <p>
-        The App currently uses camera access for QR scanning. The App does
-        not currently include a user-facing reminder system, implemented push
-        notifications, or a dedicated export / import workflow.
+        The App currently uses camera access for QR scanning and may use a
+        widget extension to display a generated travel map snapshot. The App
+        does not currently include a user-facing reminder system, implemented
+        push notifications, or a dedicated export / import workflow.
       </p>
       <p>
         The availability of certain features may depend on your device, your
