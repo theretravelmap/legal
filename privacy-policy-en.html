@@ -54,7 +54,7 @@
   <main>
     <header>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: April 6, 2026</p>
+      <p class="updated">Last updated: April 20, 2026</p>
       <p>
         This Privacy Policy explains how There: Your travel map (the "App")
         handles information when you use it.
@@ -83,6 +83,7 @@
         <li>Your visited trip entries, including country codes and optional trip dates.</li>
         <li>Your wish-list entries, including optional planned dates.</li>
         <li>Your lived-country entries, including start dates, optional end dates, and whether an entry is marked as currently living there.</li>
+        <li>Your city entries, including city name, GeoNames identifier, country code, status, optional dates, and whether a lived-city entry is marked as currently living there.</li>
         <li>Timestamps associated with trip, wish, lived-entry, and profile creation or updates.</li>
         <li>Your chosen profile name.</li>
         <li>Your optional emoji avatar selection.</li>
@@ -94,15 +95,23 @@
     <section>
       <h2>3. Local Storage and Cached Data</h2>
       <p>
-        The App uses SwiftData to store trip records and your profile data. It
-        also uses local app storage for limited settings such as onboarding
-        completion and a locally generated QR identity value.
+        The App uses SwiftData to store trip records, city entries, and your
+        profile data. It also uses local app storage for limited settings such
+        as onboarding completion and a locally generated QR identity value.
       </p>
       <p>
-        Country list data used for the main map experience is bundled inside the
-        App. Country statistics requested from the World Bank are cached on your
-        device so they can be reused later. Cached files may be removed by iOS
-        according to system behavior.
+        Country list data used for the main map experience and city search data
+        derived from GeoNames are bundled inside the App. Country statistics
+        requested from the World Bank are cached on your device so they can be
+        reused later. Cached files may be removed by iOS according to system
+        behavior.
+      </p>
+      <p>
+        If you use the travel map widget, the App may write a generated map
+        image and a small widget payload, such as completion percentage, visited
+        count, and last-updated date, to an Apple App Group container shared with
+        the widget extension. This data is used to render the widget on your
+        device.
       </p>
     </section>
 
@@ -111,9 +120,9 @@
       <p>
         The App includes Apple iCloud / CloudKit entitlements and uses a default
         SwiftData model container for its stored app data. Based on that
-        configuration, trip and profile data may sync through Apple's iCloud /
-        CloudKit services when those services are available and enabled for your
-        device and Apple account.
+        configuration, trip, city-entry, and profile data may sync through
+        Apple's iCloud / CloudKit services when those services are available and
+        enabled for your device and Apple account.
       </p>
       <p>
         The App does not implement its own separate sync account system, custom
@@ -124,9 +133,9 @@
       </p>
       <p>
         When you use the App's delete-all-data action, the App deletes stored
-        trip and profile records from its model store and clears the locally
-        generated QR identity value. The App does not present a separate restore
-        or recovery tool.
+        trip, city-entry, and profile records from its model store and clears
+        the locally generated QR identity value. The App does not present a
+        separate restore or recovery tool.
       </p>
     </section>
 
@@ -136,7 +145,8 @@
         The App includes a social comparison feature based on QR codes. Your QR
         code is generated on-device and can encode a limited travel profile:
         your local comparison identifier, your display name, your optional emoji
-        avatar, and your visited country codes.
+        avatar, and your visited country codes. Those country codes may be
+        derived from both country trip entries and visited city entries.
       </p>
       <p>
         When another person scans your QR code, that information is shared
@@ -171,7 +181,7 @@
       </p>
       <ul>
         <li>The World Bank public API for country statistics shown in country details.</li>
-        <li>Apple services involved in App Store purchases and Apple-hosted sync, if enabled.</li>
+        <li>Apple services involved in App Store purchases, purchase restoration, and Apple-hosted sync, if enabled.</li>
         <li>External websites or apps that you choose to open, such as Instagram, TikTok, Apple Maps, Google Maps, email, and the hosted legal pages.</li>
       </ul>
       <p>
@@ -182,16 +192,18 @@
     </section>
 
     <section>
-      <h2>8. Purchases and Donations</h2>
+      <h2>8. Purchases, Subscriptions, and Donations</h2>
       <p>
-        The App includes optional one-time consumable tip / donation products
-        processed through Apple's StoreKit and the App Store. The App does not
-        currently implement subscriptions.
+        The App includes optional paid There Pro features processed through
+        Apple's StoreKit and the App Store. Current paid products may include
+        auto-renewable subscription options, a lifetime non-consumable purchase,
+        and optional one-time consumable tip / donation products.
       </p>
       <p>
-        The developer does not receive your full payment card details through the
-        App. Apple processes purchase transactions under Apple's own terms and
-        privacy policies.
+        The App can check current App Store entitlements and can ask Apple to
+        restore purchases through App Store sync. The developer does not receive
+        your full payment card details through the App. Apple processes purchase
+        transactions under Apple's own terms and privacy policies.
       </p>
     </section>
 
@@ -228,8 +240,8 @@
       <h2>11. Your Choices and Rights</h2>
       <p>
         You can manage your stored travel data directly in the App by adding,
-        editing, or deleting trips, changing your name or emoji avatar, or using
-        the App's delete-all-data action.
+        editing, or deleting trips and city entries, changing your name or emoji
+        avatar, or using the App's delete-all-data action.
       </p>
       <p>
         You can also control certain Apple-managed processing by adjusting iCloud
