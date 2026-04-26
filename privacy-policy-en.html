@@ -54,7 +54,7 @@
   <main>
     <header>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: April 20, 2026</p>
+      <p class="updated">Last updated: April 27, 2026</p>
       <p>
         This Privacy Policy explains how There: Your travel map (the "App")
         handles information when you use it.
@@ -70,9 +70,10 @@
         profile, QR profile, or share images.
       </p>
       <p>
-        Most information you use in the App stays on your device and, where
-        Apple's services are enabled for your device and account, may also be
-        stored or synced through Apple's infrastructure as described below.
+        Most travel information you use in the App stays on your device and,
+        where Apple's services are enabled for your device and account, may also
+        be stored or synced through Apple's infrastructure as described below.
+        The App also uses Firebase Analytics for limited usage analytics.
       </p>
     </section>
 
@@ -89,6 +90,8 @@
         <li>Your optional emoji avatar selection.</li>
         <li>Your optional residency country selection.</li>
         <li>A locally generated device identifier used for QR comparison.</li>
+        <li>Local notification preferences and reminder scheduling state.</li>
+        <li>Cached purchase entitlement state used to show whether There Pro is active.</li>
       </ul>
     </section>
 
@@ -97,7 +100,8 @@
       <p>
         The App uses SwiftData to store trip records, city entries, and your
         profile data. It also uses local app storage for limited settings such
-        as onboarding completion and a locally generated QR identity value.
+        as onboarding completion, local notification preferences, cached Pro
+        access state, and a locally generated QR identity value.
       </p>
       <p>
         Country list data used for the main map experience and city search data
@@ -118,18 +122,19 @@
     <section>
       <h2>4. iCloud and Cloud Sync</h2>
       <p>
-        The App includes Apple iCloud / CloudKit entitlements and uses a default
-        SwiftData model container for its stored app data. Based on that
-        configuration, trip, city-entry, and profile data may sync through
-        Apple's iCloud / CloudKit services when those services are available and
-        enabled for your device and Apple account.
+        The App includes Apple iCloud / CloudKit entitlements and uses SwiftData
+        for its stored app data. Based on the current configuration, trip,
+        city-entry, and profile data may sync through Apple's iCloud / CloudKit
+        services when those services are available and enabled for your device
+        and Apple account.
       </p>
       <p>
-        The App does not implement its own separate sync account system, custom
-        sync dashboard, or custom conflict-resolution flow. If iCloud is
-        disabled, unavailable, or later re-enabled, the App relies on Apple's
-        SwiftData / CloudKit behavior rather than a separate developer-operated
-        sync service.
+        Sync is handled by Apple's iCloud infrastructure. The App does not
+        implement its own separate sync account system, custom sync dashboard,
+        developer-operated travel-data sync server, or custom
+        conflict-resolution flow. If iCloud is disabled, unavailable, or later
+        re-enabled, sync behavior depends on Apple's services, your Apple
+        account, your device settings, and network availability.
       </p>
       <p>
         When you use the App's delete-all-data action, the App deletes stored
@@ -182,6 +187,7 @@
       <ul>
         <li>The World Bank public API for country statistics shown in country details.</li>
         <li>Apple services involved in App Store purchases, purchase restoration, and Apple-hosted sync, if enabled.</li>
+        <li>Firebase / Google Analytics for app usage analytics.</li>
         <li>External websites or apps that you choose to open, such as Instagram, TikTok, Apple Maps, Google Maps, email, and the hosted legal pages.</li>
       </ul>
       <p>
@@ -208,22 +214,50 @@
     </section>
 
     <section>
-      <h2>9. Notifications, Analytics, and Tracking</h2>
+      <h2>9. Notifications</h2>
       <p>
-        The App does not include local reminder flows,
-        notification permission prompts, scheduled local notifications, analytics
-        SDKs, advertising SDKs, crash reporting SDKs, fingerprinting, or
-        app-level tracking technologies.
+        The App includes optional local reminders. If you allow notifications,
+        the App may schedule reminders related to completing your map, adding
+        the travel map widget, revisiting your wishlist, or adding your latest
+        trip.
       </p>
       <p>
-        The app configuration includes Apple push-related capabilities, but the
-        reviewed code does not show an implemented user-facing push notification
-        feature or reminder system.
+        These reminders are scheduled on your device using Apple's local
+        notification system. You can enable or disable reminders in the App's
+        settings, and you can manage notification permission in iOS, iPadOS, or
+        macOS Settings.
       </p>
     </section>
 
     <section>
-      <h2>10. Data Retention and Deletion</h2>
+      <h2>10. Analytics</h2>
+      <p>
+        The App uses Firebase Analytics to understand feature usage, improve the
+        App, and identify product issues. Analytics events may include screen
+        views, onboarding completion, feature usage, paywall interactions,
+        purchase and restore-purchase flow events, notification permission
+        results, sharing actions, QR comparison actions, and country, city, or
+        trip actions.
+      </p>
+      <p>
+        Analytics events are designed to use limited event names and categories,
+        counts, buckets, status values, and feature names. They should not
+        include your profile name, email address, exact location, user-generated
+        text, personal travel notes, or the precise list of countries, cities,
+        or trip dates you store in the App.
+      </p>
+      <p>
+        Firebase / Google may also collect technical app and device information
+        associated with analytics, such as app version, device model, operating
+        system version, usage events, and related identifiers according to
+        Firebase's own policies. The App does not include App Tracking
+        Transparency prompts, advertising SDKs, or cross-app advertising
+        tracking in the reviewed code.
+      </p>
+    </section>
+
+    <section>
+      <h2>11. Data Retention and Deletion</h2>
       <p>
         App data remains stored until you edit it, delete it through the App, or
         remove the App, subject to Apple's storage, sync, and backup behavior.
@@ -237,22 +271,23 @@
     </section>
 
     <section>
-      <h2>11. Your Choices and Rights</h2>
+      <h2>12. Your Choices and Rights</h2>
       <p>
         You can manage your stored travel data directly in the App by adding,
         editing, or deleting trips and city entries, changing your name or emoji
         avatar, or using the App's delete-all-data action.
       </p>
       <p>
-        You can also control certain Apple-managed processing by adjusting iCloud
-        and camera permissions in your device settings. If applicable law gives
-        you additional privacy rights, you may contact the developer at
+        You can also control certain Apple-managed processing by adjusting
+        iCloud, camera, and notification permissions in your device settings.
+        If applicable law gives you additional privacy rights, you may contact
+        the developer at
         <a href="mailto:beucaalexandru@icloud.com">beucaalexandru@icloud.com</a>.
       </p>
     </section>
 
     <section>
-      <h2>12. Children's Privacy</h2>
+      <h2>13. Children's Privacy</h2>
       <p>
         The App is not designed to intentionally collect personal data from
         children. The developer does not knowingly collect children's personal
@@ -266,7 +301,7 @@
     </section>
 
     <section>
-      <h2>13. Security</h2>
+      <h2>14. Security</h2>
       <p>
         Data handled by the App relies mainly on protections provided by iOS,
         your device, and, where applicable, Apple's services such as iCloud,
@@ -274,13 +309,13 @@
       </p>
       <p>
         No method of storage or transmission can be guaranteed to be completely
-        secure, but the App is designed to minimize unnecessary data sharing and
-        does not include a developer-operated analytics or profile backend.
+        secure, but the App is designed to avoid sending your personal travel
+        records to a developer-operated travel profile backend.
       </p>
     </section>
 
     <section>
-      <h2>14. Changes to This Policy</h2>
+      <h2>15. Changes to This Policy</h2>
       <p>
         This Privacy Policy may be updated from time to time to reflect changes
         to the App or legal requirements.
@@ -292,7 +327,7 @@
     </section>
 
     <section>
-      <h2>15. Contact</h2>
+      <h2>16. Contact</h2>
       <p>
         If you have questions about this Privacy Policy, you can contact the
         developer at:
@@ -301,6 +336,7 @@
         <a href="mailto:beucaalexandru@icloud.com">beucaalexandru@icloud.com</a>
       </p>
     </section>
+    <!-- Developer checklist: review the App Store Privacy Nutrition Label against Firebase Analytics, SwiftData/iCloud/CloudKit configuration, StoreKit purchases, WidgetKit/App Group storage, local notifications, camera QR scanning, and the absence of CoreLocation/AppTrackingTransparency usage in this branch. -->
   </main>
 </body>
 </html>
