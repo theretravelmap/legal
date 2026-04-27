@@ -1,19 +1,1088 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Redirecting to There on the App Store</title>
-    <meta http-equiv="refresh" content="0; url=https://apps.apple.com/ro/app/there-your-travel-map/id6760953373">
-    <link rel="canonical" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373">
-    <script>
-        window.location.replace("https://apps.apple.com/ro/app/there-your-travel-map/id6760953373");
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>There — Your Travel Map</title>
+<meta name="description" content="There is a private travel map for iPhone, iPad, and Mac. Mark visited countries, track trips, add cities, see stats, unlock achievements, and compare maps with friends.">
+
+<meta property="og:title" content="There: Your Travel Map">
+<meta property="og:description" content="Track your visited countries, trips, stats, achievements, and travel map in one beautiful app.">
+<meta property="og:image" content="https://theretravelmap.com/og-image.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ── Design tokens (from Colors.swift) ── */
+  :root {
+    --bg:           #121212;
+    --card:         #202020;
+    --list-bg:      #1e1e1e;
+    --text:         #f5f5f5;
+    --secondary:    rgba(255,255,255,0.65);
+    --border:       rgba(255,255,255,0.08);
+    --visited:      #FB7185;
+    --wish:         #FBBF24;
+    --lived:        #818CF8;
+    --comparison-a: #60A5FA;
+    --comparison-b: #34D399;
+    --radius-card:  20px;
+    --radius-sm:    12px;
+    --radius-xs:    8px;
+    --font-mark:    'MarkerFelt-Wide', 'Permanent Marker', cursive;
+    --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 100px 0; }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(18,18,18,0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: var(--font-mark);
+    font-size: 22px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  .nav-cta {
+    background: var(--visited);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: opacity .2s, transform .2s;
+  }
+  .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
+
+  /* ── Hero ── */
+  #hero {
+    padding: 80px 0 60px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -120px; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(251,113,133,0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 780px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-badges { justify-content: center; }
+    .hero-phone-wrap { order: -1; }
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(251,113,133,0.12);
+    border: 1px solid rgba(251,113,133,0.25);
+    border-radius: 50px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--visited);
+    margin-bottom: 22px;
+  }
+  .hero-tag-dot {
+    width: 6px; height: 6px;
+    background: var(--visited);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: .5; transform: scale(1.3); }
+  }
+  h1 {
+    font-size: clamp(40px, 6vw, 62px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+    text-wrap: balance;
+  }
+  h1 .accent { color: var(--visited); }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--secondary);
+    max-width: 430px;
+    margin-bottom: 36px;
+    line-height: 1.65;
+  }
+  .hero-badges {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .appstore-btn {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform .2s, opacity .2s;
+  }
+  .appstore-btn:hover { transform: translateY(-2px); opacity: .88; }
+  .appstore-btn img { height: 48px; display: block; }
+  .free-note {
+    font-size: 13px;
+    color: var(--secondary);
+    font-weight: 500;
+  }
+
+  /* ── Phone frame ── */
+  .hero-phone-wrap {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+  }
+  .phone {
+    width: 260px;
+    background: #1a1a1a;
+    border-radius: 44px;
+    border: 2px solid rgba(255,255,255,0.12);
+    box-shadow:
+      0 0 0 8px rgba(255,255,255,0.04),
+      0 40px 80px rgba(0,0,0,0.6),
+      0 0 60px rgba(251,113,133,0.08);
+    overflow: hidden;
+    position: relative;
+    transform: rotate3d(0.2, -0.8, 0, 10deg) rotate(2deg);
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: rotate3d(0.2,-0.8,0,10deg) rotate(2deg) translateY(0); }
+    50%      { transform: rotate3d(0.2,-0.8,0,10deg) rotate(2deg) translateY(-10px); }
+  }
+  .phone-notch {
+    width: 100px; height: 28px;
+    background: #1a1a1a;
+    border-radius: 0 0 18px 18px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .phone-screen {
+    background: var(--bg);
+    padding: 0 12px 24px;
+    min-height: 500px;
+  }
+  .phone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 8px;
+  }
+  .phone-wordmark {
+    font-family: var(--font-mark);
+    font-size: 16px;
+    color: var(--text);
+  }
+  .phone-icons {
+    display: flex;
+    gap: 8px;
+    opacity: .7;
+  }
+  .phone-icons span {
+    width: 18px; height: 18px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: block;
+  }
+  .phone-map {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .phone-map img { width: 100%; display: block; }
+  .phone-stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .phone-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 10px;
+    border: 1px solid var(--border);
+  }
+  .phone-card-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+  }
+  .phone-card-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--visited);
+  }
+  .phone-progress {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 10px;
+    border: 1px solid var(--border);
+  }
+  .phone-prog-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 6px;
+  }
+  .phone-prog-val { color: var(--text); font-size: 11px; font-weight: 800; }
+  .prog-bar {
+    background: rgba(255,255,255,0.08);
+    border-radius: 50px;
+    height: 5px;
+    overflow: hidden;
+  }
+  .prog-fill {
+    height: 100%;
+    background: var(--visited);
+    border-radius: 50px;
+    width: 12%;
+    transition: width 1s ease;
+  }
+
+  /* ── Section headings ── */
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--visited);
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-wrap: balance;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--secondary);
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  /* ── Feature rows ── */
+  .feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .feature-row.reverse { direction: rtl; }
+  .feature-row.reverse > * { direction: ltr; }
+  @media (max-width: 780px) {
+    .feature-row, .feature-row.reverse { grid-template-columns: 1fr; direction: ltr; }
+  }
+  .feature-text { }
+  .feature-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ── App card ── */
+  .app-card {
+    background: var(--card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    padding: 24px;
+    width: 100%;
+    max-width: 340px;
+  }
+  .app-card.glow-visited { box-shadow: 0 0 40px rgba(251,113,133,0.08); }
+  .app-card.glow-wish    { box-shadow: 0 0 40px rgba(251,191,36,0.08); }
+  .app-card.glow-lived   { box-shadow: 0 0 40px rgba(129,140,248,0.08); }
+
+  /* ── Status badge ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 50px;
+  }
+  .badge-visited { background: rgba(251,113,133,0.15); color: var(--visited); }
+  .badge-wish    { background: rgba(251,191,36,0.15);  color: var(--wish); }
+  .badge-lived   { background: rgba(129,140,248,0.15); color: var(--lived); }
+  .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+  /* ── Country row ── */
+  .country-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .country-row:last-child { border-bottom: none; }
+  .country-info { display: flex; align-items: center; gap: 10px; }
+  .flag { font-size: 22px; line-height: 1; }
+  .country-name { font-weight: 600; font-size: 14px; }
+  .country-date { font-size: 11px; color: var(--secondary); margin-top: 1px; }
+
+  /* ── Stats mock ── */
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-card {
+    background: var(--card);
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(251,113,133,0.2);
+    padding: 14px;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--secondary);
+    margin-bottom: 8px;
+  }
+  .stat-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--visited);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-detail { font-size: 11px; color: var(--secondary); margin-top: 2px; }
+
+  /* ── World progress card ── */
+  .world-card {
+    background: var(--card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  .world-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .world-card-title { font-weight: 700; font-size: 13px; }
+  .world-card-pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--visited);
+  }
+  .world-prog-bar {
+    background: rgba(255,255,255,0.08);
+    border-radius: 50px;
+    height: 7px;
+    overflow: hidden;
+  }
+  .world-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--visited), #ff9aab);
+    border-radius: 50px;
+  }
+  .world-card-sub {
+    font-size: 11px;
+    color: var(--secondary);
+    margin-top: 8px;
+  }
+
+  /* ── Timeline ── */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 10px; bottom: 10px;
+    width: 2px;
+    background: var(--border);
+  }
+  .trip-item {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .trip-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 14px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--visited);
+    box-shadow: 0 0 8px rgba(251,113,133,0.5);
+  }
+  .trip-card {
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .trip-flag { font-size: 20px; }
+  .trip-name { font-weight: 600; font-size: 13px; }
+  .trip-date { font-size: 11px; color: var(--secondary); }
+  .trip-badge-ml { margin-left: auto; }
+
+  /* ── Achievement row ── */
+  .ach-row {
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .ach-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .ach-icon.unlocked { background: rgba(251,113,133,0.12); }
+  .ach-icon.locked   { background: rgba(255,255,255,0.06); }
+  .ach-title { font-size: 13px; font-weight: 700; }
+  .ach-points { font-size: 11px; color: var(--secondary); }
+  .ach-status {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.06);
+  }
+  .ach-status.done { color: var(--visited); }
+  .ach-status.todo { color: var(--secondary); }
+  .ach-prog {
+    background: rgba(255,255,255,0.08);
+    border-radius: 50px;
+    height: 4px;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+  .ach-prog-fill {
+    height: 100%;
+    background: var(--visited);
+    border-radius: 50px;
+  }
+
+  /* ── Widget card ── */
+  .widget-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .widget-sm {
+    width: 155px; height: 155px;
+    background: var(--card);
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 30px rgba(251,113,133,0.06);
+  }
+  .widget-label { font-size: 11px; font-weight: 700; color: var(--secondary); }
+  .widget-count { font-size: 38px; font-weight: 800; color: var(--visited); line-height: 1; }
+  .widget-sub { font-size: 10px; color: var(--secondary); }
+  .widget-map-mini {
+    width: 100%; height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: .7;
+  }
+
+  /* ── Why section ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+  @media (max-width: 780px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card {
+    background: var(--card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+  .why-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .why-icon.rose   { background: rgba(251,113,133,0.12); }
+  .why-icon.amber  { background: rgba(251,191,36,0.12); }
+  .why-icon.indigo { background: rgba(129,140,248,0.12); }
+  .why-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .why-body { font-size: 14px; color: var(--secondary); line-height: 1.6; }
+
+  /* ── Indie section ── */
+  #indie {
+    background: var(--list-bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .indie-inner {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .indie-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--visited) 0%, var(--lived) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 20px;
+  }
+  .indie-quote {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 24px;
+    text-wrap: balance;
+  }
+  .indie-name {
+    font-size: 14px;
+    color: var(--secondary);
+    font-weight: 600;
+  }
+
+  /* ── Pricing ── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 48px;
+  }
+  @media (max-width: 780px) { .pricing-grid { grid-template-columns: 1fr; } }
+  .plan-card {
+    background: var(--card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    padding: 24px;
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .plan-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+  .plan-card.featured {
+    border-color: var(--visited);
+    box-shadow: 0 0 0 1px var(--visited), 0 0 40px rgba(251,113,133,0.1);
+  }
+  .plan-badge-pill {
+    position: absolute;
+    top: -12px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--visited);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 50px;
+    white-space: nowrap;
+  }
+  .plan-name { font-size: 13px; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 10px; }
+  .plan-price {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .plan-price-sub { font-size: 13px; color: var(--secondary); margin-bottom: 18px; }
+  .plan-features { list-style: none; margin-bottom: 22px; }
+  .plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--secondary);
+    margin-bottom: 8px;
+  }
+  .plan-features li::before {
+    content: '✓';
+    color: var(--visited);
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .plan-cta {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: opacity .2s, transform .2s;
+  }
+  .plan-cta.primary { background: var(--visited); color: #fff; }
+  .plan-cta.secondary { background: rgba(255,255,255,0.06); color: var(--text); }
+  .plan-cta:hover { opacity: .88; transform: translateY(-1px); }
+
+  /* ── Free vs Pro ── */
+  .fvp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 48px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (max-width: 640px) { .fvp-grid { grid-template-columns: 1fr; } }
+  .fvp-card {
+    background: var(--card);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+  .fvp-free { opacity: .85; }
+  .fvp-pro {
+    border-color: var(--visited);
+    box-shadow: 0 0 0 1px var(--visited), 0 0 48px rgba(251,113,133,0.1);
+  }
+  .fvp-pro-badge {
+    position: absolute;
+    top: -13px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--visited);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 16px;
+    border-radius: 50px;
+    white-space: nowrap;
+    letter-spacing: .3px;
+  }
+  .fvp-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .fvp-subtitle {
+    font-size: 14px;
+    color: var(--secondary);
+    line-height: 1.5;
+  }
+  .fvp-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .fvp-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--secondary);
+  }
+  .fvp-features li::before {
+    content: '✓';
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(255,255,255,0.25);
+    flex-shrink: 0;
+  }
+  .fvp-features-pro li::before { color: var(--visited); }
+  .fvp-btn {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: opacity .2s, transform .2s;
+  }
+  .fvp-btn:hover { opacity: .88; transform: translateY(-1px); }
+  .fvp-btn-free { background: rgba(255,255,255,0.06); color: var(--text); }
+  .fvp-btn-pro  { background: var(--visited); color: #fff; }
+  .fvp-disclaimer {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.28);
+    margin-top: 20px;
+  }
+
+  /* ── Final CTA ── */
+  #final-cta {
+    text-align: center;
+    padding: 120px 0;
+  }
+  #final-cta h2 { max-width: 600px; margin: 0 auto 16px; }
+  #final-cta .section-sub { margin: 0 auto 36px; text-align: center; }
+  .cta-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── Map illustration tint ── */
+  .map-illus { width: 100%; max-width: 380px; opacity: .9; filter: drop-shadow(0 0 20px rgba(251,113,133,0.15)); }
+  .illus-wrap { display: flex; justify-content: center; }
+  .illus-wrap img { width: 100%; max-width: 280px; }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ── Scroll fade-in ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
 </head>
 <body>
-    <p>
-        Redirecting to
-        <a href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373">There on the App Store</a>.
-    </p>
+
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <a class="wordmark" href="#">There</a>
+    <a class="nav-cta" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank">Download Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Your world,<br><span class="accent">beautifully</span><br>mapped.</h1>
+        <p class="hero-sub">Track every country you've visited, lived in, or dream of. Your personal travel map, always in your pocket.</p>
+        <div class="hero-badges">
+          <a class="appstore-btn" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank">
+            <img src="images/appstore-badge.svg" alt="Download on the App Store">
+          </a>
+          <span class="free-note">
+</span>
+        </div>
+      </div>
+      <div class="hero-phone-wrap">
+        <div class="phone" style="width:240px;border-radius:44px;overflow:hidden;padding:0;background:#000;">
+          <img src="images/home-en-iphone.png" alt="There app screenshot" style="width:100%;display:block;border-radius:44px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FEATURE: Compare Maps -->
+<section id="compare-feature">
+  <div class="container">
+    <div class="feature-row fade-up">
+      <div class="feature-text">
+        <p class="section-eyebrow">Compare Maps</p>
+        <h2>See the world through a friend's eyes.</h2>
+        <p class="section-sub">Compare your travel map with anyone. Discover how much overlap you share, where only you've been, and where only they have, beautifully visualised on a single map.</p>
+
+      </div>
+      <div class="feature-visual">
+        <div style="width:240px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(96,165,250,0.08);border:2px solid rgba(255,255,255,0.12);">
+          <img src="images/CompareMap-en.png" alt="Compare Maps screenshot" style="width:100%;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FEATURE: Widget -->
+<section id="widget-feature">
+  <div class="container">
+    <div class="feature-row reverse fade-up">
+      <div class="feature-text">
+        <p class="section-eyebrow">Home Screen Widget</p>
+        <h2>Your map, always one glance away.</h2>
+        <p class="section-sub">Add the There widget to your home screen and see your visited countries and world progress without ever opening the app. Your journey, living right on your lock screen.</p>
+      </div>
+      <div class="feature-visual">
+        <div style="width:240px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(251,113,133,0.08);border:2px solid rgba(255,255,255,0.12);">
+          <img src="images/widget-screenshot.png" alt="There widget on home screen" style="width:100%;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FEATURE: Trips timeline -->
+<section id="trips-feature">
+  <div class="container">
+    <div class="feature-row fade-up">
+      <div class="feature-text">
+        <p class="section-eyebrow">Trips & Timeline</p>
+        <h2>Your journey, in chronological order.</h2>
+        <p class="section-sub">Log exact travel dates for each trip. Browse a beautiful timeline of everywhere you've been, with city level precision in the Pro version.</p>
+      </div>
+      <div class="feature-visual">
+        <div style="width:240px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(251,113,133,0.08);border:2px solid rgba(255,255,255,0.12);">
+          <img src="images/timeline-en-iphone.png" alt="There timeline screenshot" style="width:100%;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FEATURE 4: Achievements -->
+<section id="ach-feature">
+  <div class="container">
+    <div class="feature-row reverse fade-up">
+      <div class="feature-text">
+        <p class="section-eyebrow">Achievements</p>
+        <h2>Turn travel into milestones.</h2>
+        <p class="section-sub">Earn points and unlock achievements as you explore more of the world. A personal leaderboard for your own adventures.</p>
+      </div>
+      <div class="feature-visual">
+        <div style="width:240px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(251,113,133,0.08);border:2px solid rgba(255,255,255,0.12);">
+          <img src="images/achievements-screenshot.png" alt="There achievements screenshot" style="width:100%;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="fade-up" style="max-width:560px;margin:0 auto;text-align:center;">
+      <p class="section-eyebrow">There Pro</p>
+      <h2>Start free. Go further with Pro.</h2>
+      <p class="section-sub" style="margin:0 auto;">Build your travel map for free. Upgrade when you want city tracking, deeper stats, achievements, and your full travel timeline.</p>
+    </div>
+
+    <div class="fvp-grid fade-up">
+      <!-- Free -->
+      <div class="fvp-card fvp-free">
+        <div class="fvp-card-header">
+          <div class="fvp-title">Free</div>
+          <div class="fvp-subtitle">Everything you need to start your map.</div>
+        </div>
+        <ul class="fvp-features">
+          <li>Mark visited countries</li>
+          <li>See your world progress</li>
+          <li>Explore basic travel stats</li>
+          <li>Add your map as a widget on Home Screen</li>
+          <li>Compare your map with friends</li>
+          <li>Sync with iCloud
+
+</li>
+        </ul>
+        <a class="fvp-btn fvp-btn-free" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank">Download Free</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="fvp-card fvp-pro">
+        <div class="fvp-pro-badge">Best value available</div>
+        <div class="fvp-card-header">
+          <div class="fvp-title" style="color:var(--visited);">There Pro</div>
+          <div class="fvp-subtitle">For people who want the full travel story.</div>
+        </div>
+        <ul class="fvp-features fvp-features-pro">
+          <li>Everything in Free</li>
+          <li>Mark visited cities</li>
+          <li>See your city timeline</li>
+          <li>Unlock advanced achievements</li>
+          <li>Lifetime option available</li>
+        </ul>
+        <a class="fvp-btn fvp-btn-pro" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank">Unlock Pro</a>
+      </div>
+    </div>
+
+    <p class="fvp-disclaimer fade-up">Pricing is shown in the App Store before purchase.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final-cta">
+  <div class="container">
+    <div class="hero-glow" style="top:-200px;opacity:.6;"></div>
+    <div class="fade-up">
+      <p class="section-eyebrow" style="text-align:center;">Ready to start?</p>
+      <h2>The world is waiting.<br>Start mapping it today.</h2>
+      <p class="section-sub">Free to download. No account required. Just open, tap, and your map begins.</p>
+      <div class="cta-group">
+        <a class="appstore-btn" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank">
+          <img src="images/appstore-badge.svg" alt="Download on the App Store">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://theretravelmap.com/privacy-policy-en" target="_blank">Privacy Policy</a>
+      <a href="https://theretravelmap.com/terms-en" target="_blank">Terms of Use</a>
+      <a href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank">App Store</a>
+      <a href="https://theretravelmap.com/contact" target="_blank">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Alexandru Beuca. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Animate progress bars when visible
+  const progObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target.querySelector('.world-prog-fill');
+        if (fill) { fill.style.width = '17%'; }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.world-card').forEach(el => progObserver.observe(el));
+</script>
 </body>
 </html>
