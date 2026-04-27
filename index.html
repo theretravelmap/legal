@@ -36,7 +36,10 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
 
   body {
     background: var(--bg);
@@ -45,7 +48,10 @@
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
+
+  img { max-width: 100%; }
 
   /* ── Layout ── */
   .container {
@@ -118,7 +124,6 @@
   @media (max-width: 780px) {
     .hero-inner { grid-template-columns: 1fr; text-align: center; }
     .hero-badges { justify-content: center; }
-    .hero-phone-wrap { order: -1; }
   }
   .hero-tag {
     display: inline-flex;
@@ -339,6 +344,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .screenshot-frame {
+    width: 240px;
+    max-width: 100%;
+    border-radius: 44px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.12);
+    box-shadow:
+      0 40px 80px rgba(0,0,0,0.6),
+      0 0 60px rgba(251,113,133,0.08);
+  }
+  .screenshot-frame.compare {
+    box-shadow:
+      0 40px 80px rgba(0,0,0,0.6),
+      0 0 60px rgba(96,165,250,0.08);
+  }
+  .screenshot-frame img {
+    width: 100%;
+    display: block;
   }
 
   /* ── App card ── */
@@ -787,6 +812,8 @@
   #final-cta {
     text-align: center;
     padding: 120px 0;
+    overflow: hidden;
+    position: relative;
   }
   #final-cta h2 { max-width: 600px; margin: 0 auto 16px; }
   #final-cta .section-sub { margin: 0 auto 36px; text-align: center; }
@@ -853,6 +880,188 @@
     opacity: 1;
     transform: none;
   }
+
+  @media (max-width: 780px) {
+    .container,
+    nav .inner,
+    .footer-inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    section { padding: 72px 0; }
+
+    #hero { padding: 48px 0 64px; }
+
+    .hero-inner {
+      gap: 36px;
+      justify-items: center;
+    }
+
+    .hero-text,
+    .feature-text {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .hero-sub,
+    .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-row {
+      gap: 32px;
+      text-align: center;
+    }
+
+    .feature-visual {
+      width: 100%;
+    }
+
+    .fvp-grid,
+    .why-grid,
+    .pricing-grid {
+      margin-top: 36px;
+    }
+
+    .footer-inner {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .footer-links {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav .inner {
+      height: 56px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .wordmark { font-size: 21px; }
+
+    .nav-cta {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+
+    .container,
+    .footer-inner {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    section { padding: 60px 0; }
+
+    #hero { padding: 38px 0 56px; }
+
+    .hero-glow {
+      width: 100vw;
+      height: 100vw;
+      top: -26vw;
+    }
+
+    .hero-inner { gap: 30px; }
+
+    h1 {
+      font-size: clamp(38px, 11vw, 46px);
+      letter-spacing: -0.8px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 9vw, 34px);
+      letter-spacing: -0.5px;
+    }
+
+    .hero-sub,
+    .section-sub {
+      font-size: 16px;
+      line-height: 1.58;
+    }
+
+    .hero-sub { margin-bottom: 28px; }
+
+    .hero-badges,
+    .cta-group {
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .appstore-btn {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .appstore-btn img { height: 50px; }
+
+    .phone,
+    .screenshot-frame {
+      width: min(218px, calc(100vw - 88px)) !important;
+      border-radius: 40px !important;
+    }
+
+    .phone img,
+    .screenshot-frame img {
+      border-radius: 40px !important;
+    }
+
+    .feature-row { gap: 28px; }
+
+    .fvp-card,
+    .why-card,
+    .plan-card {
+      padding: 22px;
+    }
+
+    .fvp-card { gap: 20px; }
+
+    #final-cta { padding: 72px 0; }
+
+    .footer-links {
+      gap: 14px 20px;
+    }
+
+    .footer-copy {
+      width: 100%;
+      line-height: 1.5;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .container,
+    nav .inner,
+    .footer-inner {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .nav-cta {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .phone,
+    .screenshot-frame {
+      width: min(204px, calc(100vw - 72px)) !important;
+    }
+
+    .fvp-card,
+    .why-card,
+    .plan-card {
+      padding: 20px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -903,8 +1112,8 @@
 
       </div>
       <div class="feature-visual">
-        <div style="width:240px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(96,165,250,0.08);border:2px solid rgba(255,255,255,0.12);">
-          <img src="images/CompareMap-en.png" alt="Compare Maps screenshot" style="width:100%;display:block;">
+        <div class="screenshot-frame compare">
+          <img src="images/CompareMap-en.png" alt="Compare Maps screenshot">
         </div>
       </div>
     </div>
@@ -923,8 +1132,8 @@
         <p class="section-sub">Add the There widget to your home screen and see your visited countries and world progress without ever opening the app. Your journey, living right on your lock screen.</p>
       </div>
       <div class="feature-visual">
-        <div style="width:240px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(251,113,133,0.08);border:2px solid rgba(255,255,255,0.12);">
-          <img src="images/widget-screenshot.png" alt="There widget on home screen" style="width:100%;display:block;">
+        <div class="screenshot-frame">
+          <img src="images/widget-screenshot.png" alt="There widget on home screen">
         </div>
       </div>
     </div>
@@ -943,8 +1152,8 @@
         <p class="section-sub">Log exact travel dates for each trip. Browse a beautiful timeline of everywhere you've been, with city level precision in the Pro version.</p>
       </div>
       <div class="feature-visual">
-        <div style="width:240px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(251,113,133,0.08);border:2px solid rgba(255,255,255,0.12);">
-          <img src="images/timeline-en-iphone.png" alt="There timeline screenshot" style="width:100%;display:block;">
+        <div class="screenshot-frame">
+          <img src="images/timeline-en-iphone.png" alt="There timeline screenshot">
         </div>
       </div>
     </div>
@@ -963,8 +1172,8 @@
         <p class="section-sub">Earn points and unlock achievements as you explore more of the world. A personal leaderboard for your own adventures.</p>
       </div>
       <div class="feature-visual">
-        <div style="width:240px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(251,113,133,0.08);border:2px solid rgba(255,255,255,0.12);">
-          <img src="images/achievements-screenshot.png" alt="There achievements screenshot" style="width:100%;display:block;">
+        <div class="screenshot-frame">
+          <img src="images/achievements-screenshot.png" alt="There achievements screenshot">
         </div>
       </div>
     </div>
