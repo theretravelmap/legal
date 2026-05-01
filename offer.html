@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>There Offer — Post Your Travel Map, Get Rewarded</title>
+<meta name="description" content="Post your There travel map on TikTok or Instagram, reach the view threshold, and unlock 50% off or free lifetime access.">
+
+<meta property="og:title" content="There Offer: Post Your Travel Map, Get Free Lifetime Access">
+<meta property="og:description" content="Post your There travel map on TikTok or Instagram, reach the view threshold, and unlock 50% off or free lifetime access.">
+<meta property="og:image" content="https://theretravelmap.com/images/og-image.png">
+<meta property="og:image:secure_url" content="https://theretravelmap.com/images/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1366">
+<meta property="og:image:height" content="768">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theretravelmap.com/offer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="There Offer: Post Your Travel Map, Get Free Lifetime Access">
+<meta name="twitter:description" content="Share your There progress on TikTok or Instagram. If your post takes off, you can unlock FREE lifetime access to There.">
+<meta name="twitter:image" content="https://theretravelmap.com/images/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #121212;
+    --card: #202020;
+    --list-bg: #1e1e1e;
+    --text: #f5f5f5;
+    --secondary: rgba(255,255,255,0.65);
+    --muted: rgba(255,255,255,0.42);
+    --border: rgba(255,255,255,0.08);
+    --visited: #FB7185;
+    --wish: #FBBF24;
+    --lived: #818CF8;
+    --comparison-a: #60A5FA;
+    --comparison-b: #34D399;
+    --radius-card: 20px;
+    --radius-sm: 12px;
+    --font-mark: 'MarkerFelt-Wide', 'Permanent Marker', cursive;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 42px 0; }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(18,18,18,0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav .inner {
+    max-width: 1100px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wordmark {
+    color: var(--text);
+    font-family: var(--font-mark);
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .nav-link {
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s, transform .2s;
+  }
+
+  .nav-link[aria-current="page"],
+  .nav-link:hover {
+    color: var(--text);
+    transform: translateY(-1px);
+  }
+
+  .nav-cta {
+    background: var(--visited);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: opacity .2s, transform .2s;
+  }
+
+  .nav-cta:hover {
+    opacity: .88;
+    transform: translateY(-1px);
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0 42px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -160px;
+    left: 50%;
+    width: 760px;
+    height: 760px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(251,113,133,0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h1 {
+    max-width: 650px;
+    font-size: clamp(38px, 5.6vw, 58px);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -1px;
+    margin: 0 auto 18px;
+    text-wrap: balance;
+  }
+
+  h1 .accent { color: var(--visited); }
+
+  .hero-sub {
+    max-width: 560px;
+    color: var(--secondary);
+    font-size: 17px;
+    line-height: 1.58;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+  }
+
+  .cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    padding: 0 20px;
+    text-decoration: none;
+    transition: opacity .2s, transform .2s, background .2s;
+  }
+
+  .button:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    background: var(--visited);
+    color: #fff;
+    box-shadow: 0 16px 45px rgba(251,113,133,0.2);
+  }
+
+  .button-secondary {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .appstore-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 52px;
+    text-decoration: none;
+    transition: opacity .2s, transform .2s;
+  }
+
+  .appstore-btn:hover {
+    opacity: .88;
+    transform: translateY(-2px);
+  }
+
+  .appstore-btn img {
+    display: block;
+    height: 48px;
+  }
+
+  .divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  .section-head {
+    max-width: 640px;
+    margin-bottom: 22px;
+  }
+
+  .section-head.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .section-eyebrow {
+    color: var(--visited);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.35px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: clamp(24px, 3.4vw, 34px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    text-wrap: balance;
+  }
+
+  .section-sub {
+    color: var(--secondary);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    counter-reset: step;
+  }
+
+  .step-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px 16px 64px;
+    transition: transform .2s, border-color .2s;
+  }
+
+  .step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(251,113,133,0.25);
+  }
+
+  .step-card::before {
+    counter-increment: step;
+    content: counter(step);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    width: 30px;
+    height: 30px;
+    background: rgba(251,113,133,0.14);
+    border: 1px solid rgba(251,113,133,0.24);
+    border-radius: 50%;
+    color: var(--visited);
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .step-card h3,
+  .reward-card h3,
+  .ideas-card h3,
+  .rules-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .step-card p,
+  .reward-card p,
+  .rules-card p {
+    color: var(--secondary);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .reward-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    transition: transform .2s, box-shadow .2s;
+  }
+
+  .reward-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 60px rgba(0,0,0,0.28);
+  }
+
+  .reward-card.featured {
+    border-color: var(--visited);
+    box-shadow: 0 0 0 1px var(--visited), 0 0 48px rgba(251,113,133,0.1);
+  }
+
+  .reward-card::after {
+    content: '';
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 210px;
+    height: 210px;
+    background: radial-gradient(circle, rgba(251,113,133,0.15), transparent 70%);
+  }
+
+  .reward-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    background: rgba(251,113,133,0.13);
+    border: 1px solid rgba(251,113,133,0.22);
+    border-radius: 50px;
+    color: var(--visited);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 0 12px;
+    margin-bottom: 16px;
+  }
+
+  .reward-value {
+    font-size: clamp(34px, 6vw, 46px);
+    font-weight: 800;
+    line-height: .98;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ideas-card,
+  .rules-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+  }
+
+  .ideas-list,
+  .rules-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .ideas-list li,
+  .rules-list li {
+    position: relative;
+    color: var(--secondary);
+    font-size: 13px;
+    line-height: 1.45;
+    padding-left: 20px;
+  }
+
+  .ideas-list li::before,
+  .rules-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--visited);
+    box-shadow: 0 0 12px rgba(251,113,133,0.45);
+  }
+
+  .rules-card {
+    background: var(--list-bg);
+  }
+
+  .rules-card h3 {
+    color: rgba(255,255,255,0.88);
+  }
+
+  .rules-list li::before {
+    background: rgba(255,255,255,0.28);
+    box-shadow: none;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color .2s;
+  }
+
+  .footer-links a:hover { color: var(--text); }
+
+  .footer-copy {
+    color: rgba(255,255,255,0.3);
+    font-size: 12px;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: .01ms !important;
+    }
+
+    .fade-up {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    h1 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .steps-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 700px) {
+    section { padding: 34px 0; }
+
+    .container,
+    nav .inner,
+    .footer-inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .hero {
+      padding: 36px 0 34px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 10vw, 48px);
+      letter-spacing: -0.9px;
+    }
+
+    .hero-sub,
+    .section-sub {
+      font-size: 16px;
+      line-height: 1.58;
+    }
+
+    .cta-row {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .button,
+    .appstore-btn {
+      width: 100%;
+      max-width: 330px;
+    }
+
+    .button {
+      min-height: 50px;
+    }
+
+    .appstore-btn {
+      justify-content: center;
+    }
+
+    .steps-grid,
+    .rewards-grid,
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-inner,
+    .footer-links {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav .inner {
+      height: 56px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .wordmark { font-size: 21px; }
+
+    .nav-actions { gap: 14px; }
+
+    .nav-cta {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+
+    .container,
+    .footer-inner {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .hero-glow {
+      width: 100vw;
+      height: 100vw;
+      top: -26vw;
+    }
+
+    .ideas-card,
+    .rules-card,
+    .reward-card {
+      padding: 22px;
+    }
+
+    .footer-copy {
+      width: 100%;
+      line-height: 1.5;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="wordmark" href="/">There</a>
+    <div class="nav-actions">
+      <a class="nav-link" href="/offer" aria-current="page">Offer</a>
+      <a class="nav-cta" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank" rel="noopener">Download Free</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-copy fade-up">
+          <h1>Post your travel map. <span class="accent">Unlock free lifetime access.</span></h1>
+          <p class="hero-sub">Share your There progress on TikTok or Instagram. If your post takes off, you can unlock FREE lifetime access to There.</p>
+          <div class="cta-row">
+            <a class="button button-primary" href="#how-it-works">Start now</a>
+            <a class="button button-secondary" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank" rel="noopener">Download the app</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-head center fade-up">
+        <p class="section-eyebrow">How it works</p>
+        <h2>Four simple steps.</h2>
+        <p class="section-sub">Show your map, tag us, and send the post once it reaches a reward threshold.</p>
+      </div>
+      <div class="steps-grid fade-up">
+        <article class="step-card">
+          <h3>Create your video</h3>
+          <p>Create a Reel or TikTok that showcases your travel map and progress in There.</p>
+        </article>
+        <article class="step-card">
+          <h3>Post it publicly</h3>
+          <p>Share it on TikTok or Instagram so people can see your map and progress.</p>
+        </article>
+        <article class="step-card">
+          <h3>Tag There</h3>
+          <p>Use #theretravelmap and tag @theretravelmap in your post.</p>
+        </article>
+        <article class="step-card">
+          <h3>Claim your reward</h3>
+          <p>When your post reaches the threshold, contact us on Instagram or TikTok at @theretravelmap.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="rewards">
+    <div class="container">
+      <div class="section-head fade-up">
+        <p class="section-eyebrow">Reward tiers</p>
+        <h2>More views, bigger reward.</h2>
+        <p class="section-sub">Earn a discount when your post gets traction, or unlock There Lifetime free if it really travels.</p>
+      </div>
+      <div class="rewards-grid fade-up">
+        <article class="reward-card">
+          <div class="reward-badge">1k views</div>
+          <div class="reward-value">50% off</div>
+          <h3>Lifetime discount</h3>
+          <p>Reach 1,000 organic views and get half off There Lifetime.</p>
+        </article>
+        <article class="reward-card featured">
+          <div class="reward-badge">5k views</div>
+          <div class="reward-value">Free</div>
+          <h3>There Lifetime</h3>
+          <p>Reach 5,000 organic views and get lifetime access for free.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="ideas-and-rules">
+    <div class="container">
+      <div class="content-grid">
+        <article class="ideas-card fade-up">
+          <p class="section-eyebrow">What to show</p>
+          <h3>Make your map feel personal.</h3>
+          <ul class="ideas-list">
+            <li>Your visited countries map</li>
+            <li>Your city progress or stats</li>
+            <li>Achievements you have unlocked</li>
+            <li>A before and after progress comparison</li>
+            <li>Your favorite part of the app</li>
+          </ul>
+        </article>
+        <article class="rules-card fade-up">
+          <p class="section-eyebrow">Rules</p>
+          <h3>Keep it real.</h3>
+          <ul class="rules-list">
+            <li>Views must be organic.</li>
+            <li>No paid promotion or fake engagement.</li>
+            <li>You must keep the post public while we review it.</li>
+            <li>We may verify the post and view count before approving.</li>
+            <li>The offer can be changed or removed at any time.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://theretravelmap.com/privacy-policy-en" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="https://theretravelmap.com/terms-en" target="_blank" rel="noopener">Terms of Use</a>
+      <a href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank" rel="noopener">App Store</a>
+      <a href="https://theretravelmap.com/contact" target="_blank" rel="noopener">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Alexandru Beuca. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
