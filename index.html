@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>There: Your Travel Map</title>
+<title>There — Your Travel Map</title>
 <meta name="description" content="There is a private travel map for iPhone, iPad, and Mac. Mark visited countries, track trips, add cities, see stats, unlock achievements, and compare maps with friends.">
 
 <meta property="og:title" content="There: Your Travel Map">
@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://theretravelmap.com/images/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
   /* ── Design tokens (from Colors.swift) ── */
   :root {
@@ -108,6 +108,22 @@
     transition: opacity .2s, transform .2s;
   }
   .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .nav-link {
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s, transform .2s;
+  }
+  .nav-link:hover {
+    color: var(--text);
+    transform: translateY(-1px);
+  }
 
   /* ── Hero ── */
   #hero {
@@ -816,6 +832,71 @@
     margin-top: 20px;
   }
 
+  /* ── Offer promo ── */
+  #creator-offer { padding: 58px 0; }
+  .offer-promo {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, rgba(251,113,133,0.16), rgba(129,140,248,0.11)),
+      var(--card);
+    border: 1px solid rgba(251,113,133,0.28);
+    border-radius: var(--radius-card);
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+  }
+  .offer-promo::after {
+    content: '';
+    position: absolute;
+    right: -70px;
+    top: -90px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(251,191,36,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .offer-promo-kicker {
+    color: var(--visited);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .offer-promo h2 {
+    font-size: clamp(26px, 4vw, 38px);
+    margin-bottom: 10px;
+  }
+  .offer-promo p {
+    color: var(--secondary);
+    max-width: 610px;
+  }
+  .offer-promo-link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 14px;
+    background: var(--visited);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity .2s, transform .2s;
+  }
+  .offer-promo-link:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+  }
+
   /* ── Final CTA ── */
   #final-cta {
     text-align: center;
@@ -1032,6 +1113,18 @@
       padding: 22px;
     }
 
+    #creator-offer { padding: 46px 0; }
+
+    .offer-promo {
+      grid-template-columns: 1fr;
+      text-align: left;
+      padding: 24px;
+    }
+
+    .offer-promo-link {
+      width: 100%;
+    }
+
     .fvp-card { gap: 20px; }
 
     #final-cta { padding: 72px 0; }
@@ -1078,7 +1171,10 @@
 <nav>
   <div class="inner">
     <a class="wordmark" href="#">There</a>
-    <a class="nav-cta" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank">Download Free</a>
+    <div class="nav-actions">
+      <a class="nav-link" href="/offer">Offer</a>
+      <a class="nav-cta" href="https://apps.apple.com/ro/app/there-your-travel-map/id6760953373" target="_blank">Download Free</a>
+    </div>
   </div>
 </nav>
 
@@ -1103,6 +1199,21 @@
           <img src="images/home-en-iphone.png" alt="There app screenshot" style="width:100%;display:block;border-radius:44px;">
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CREATOR OFFER -->
+<section id="creator-offer">
+  <div class="container">
+    <div class="offer-promo fade-up">
+      <div>
+        <h2>Post your travel map. Unlock free lifetime access.</h2>
+        <p>Share your There progress on TikTok or Instagram. If your post takes off, you can unlock FREE lifetime access to There.</p>
+      </div>
+      <a class="offer-promo-link" href="/offer">See the offer</a>
     </div>
   </div>
 </section>
