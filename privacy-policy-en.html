@@ -54,7 +54,7 @@
   <main>
     <header>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: April 27, 2026</p>
+      <p class="updated">Last updated: May 6, 2026</p>
       <p>
         This Privacy Policy explains how There: Your travel map (the "App")
         handles information when you use it.
@@ -66,8 +66,8 @@
       <p>
         The App is a personal travel tracker. It does not require a user account
         and the App does not include a developer-operated backend that receives
-        or stores your travel history,
-        profile, QR profile, or share images.
+        or stores your travel history, airport history, profile, QR profile, or
+        share images.
       </p>
       <p>
         Most travel information you use in the App stays on your device and,
@@ -85,7 +85,8 @@
         <li>Your wish-list entries, including optional planned dates.</li>
         <li>Your lived-country entries, including start dates, optional end dates, and whether an entry is marked as currently living there.</li>
         <li>Your city entries, including city name, GeoNames identifier, country code, status, optional dates, and whether a lived-city entry is marked as currently living there.</li>
-        <li>Timestamps associated with trip, wish, lived-entry, and profile creation or updates.</li>
+        <li>Your visited airport entries, including airport identifier, IATA code, airport name, optional city name, and optional country code.</li>
+        <li>Timestamps associated with trip, wish, lived-entry, city-entry, airport-entry, and profile creation or updates.</li>
         <li>Your chosen profile name.</li>
         <li>Your optional emoji avatar selection.</li>
         <li>Your optional residency country selection.</li>
@@ -98,17 +99,18 @@
     <section>
       <h2>3. Local Storage and Cached Data</h2>
       <p>
-        The App uses SwiftData to store trip records, city entries, and your
-        profile data. It also uses local app storage for limited settings such
-        as onboarding completion, local notification preferences, cached Pro
-        access state, and a locally generated QR identity value.
+        The App uses SwiftData to store trip records, city entries, airport
+        entries, and your profile data. It also uses local app storage for
+        limited settings such as onboarding completion, local notification
+        preferences, cached Pro access state, and a locally generated QR
+        identity value.
       </p>
       <p>
-        Country list data used for the main map experience and city search data
-        derived from GeoNames are bundled inside the App. Country statistics
-        requested from the World Bank are cached on your device so they can be
-        reused later. Cached files may be removed by iOS according to system
-        behavior.
+        Country list data used for the main map experience, city search data
+        derived from GeoNames, and airport search data derived from OurAirports
+        are bundled inside the App. Country statistics requested from the World
+        Bank are cached on your device so they can be reused later. Cached files
+        may be removed by iOS according to system behavior.
       </p>
       <p>
         If you use the travel map widget, the App may write a generated map
@@ -124,9 +126,9 @@
       <p>
         The App includes Apple iCloud / CloudKit entitlements and uses SwiftData
         for its stored app data. Based on the current configuration, trip,
-        city-entry, and profile data may sync through Apple's iCloud / CloudKit
-        services when those services are available and enabled for your device
-        and Apple account.
+        city-entry, airport-entry, and profile data may sync through Apple's
+        iCloud / CloudKit services when those services are available and enabled
+        for your device and Apple account.
       </p>
       <p>
         Sync is handled by Apple's iCloud infrastructure. The App does not
@@ -138,9 +140,9 @@
       </p>
       <p>
         When you use the App's delete-all-data action, the App deletes stored
-        trip, city-entry, and profile records from its model store and clears
-        the locally generated QR identity value. The App does not present a
-        separate restore or recovery tool.
+        trip, city-entry, airport-entry, and profile records from its model
+        store and clears the locally generated QR identity value. The App does
+        not present a separate restore or recovery tool.
       </p>
     </section>
 
@@ -219,7 +221,7 @@
         The App includes optional local reminders. If you allow notifications,
         the App may schedule reminders related to completing your map, adding
         the travel map widget, revisiting your wishlist, or adding your latest
-        trip.
+        travel entry.
       </p>
       <p>
         These reminders are scheduled on your device using Apple's local
@@ -236,15 +238,15 @@
         App, and identify product issues. Analytics events may include screen
         views, onboarding completion, feature usage, paywall interactions,
         purchase and restore-purchase flow events, notification permission
-        results, sharing actions, QR comparison actions, and country, city, or
-        trip actions.
+        results, sharing actions, QR comparison actions, and country, city,
+        airport, or trip actions.
       </p>
       <p>
         Analytics events are designed to use limited event names and categories,
         counts, buckets, status values, and feature names. They should not
         include your profile name, email address, exact location, user-generated
         text, personal travel notes, or the precise list of countries, cities,
-        or trip dates you store in the App.
+        airports, or trip dates you store in the App.
       </p>
       <p>
         Firebase / Google may also collect technical app and device information
@@ -274,8 +276,8 @@
       <h2>12. Your Choices and Rights</h2>
       <p>
         You can manage your stored travel data directly in the App by adding,
-        editing, or deleting trips and city entries, changing your name or emoji
-        avatar, or using the App's delete-all-data action.
+        editing, or deleting trips, city entries, and airport entries, changing
+        your name or emoji avatar, or using the App's delete-all-data action.
       </p>
       <p>
         You can also control certain Apple-managed processing by adjusting
